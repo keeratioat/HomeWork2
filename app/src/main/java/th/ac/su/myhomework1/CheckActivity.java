@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class CheckActivity extends AppCompatActivity {
 
@@ -23,8 +24,13 @@ public class CheckActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText idEditText = findViewById(R.id.id_edit_text);
                 String strID = idEditText.getText().toString();
-                Log.i("CheckActivity" , "strLength is " + strID.length());
-                if(strID.length() == 13){
+                if(strID.length() != 13){
+                    Toast t = Toast.makeText(CheckActivity.this,
+                            "กรุณากรอกหมายเลขบัตรประชาชน 13 หลัก",
+                            Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else if(strID.equals("1111111111111") || strID.equals("2222222222222")){
                     AlertDialog.Builder dialog = new AlertDialog.Builder(CheckActivity.this);
                     dialog.setTitle("ผลการตรวจสอบสิทธิ์");
                     dialog.setMessage("คุณเป็นผู้มีสิทธิ์เลือกตั้ง");

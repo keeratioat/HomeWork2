@@ -26,7 +26,7 @@ public class CheckActivity extends AppCompatActivity {
                 String strID = idEditText.getText().toString();
                 if(strID.length() != 13){
                     Toast t = Toast.makeText(CheckActivity.this,
-                            "กรุณากรอกหมายเลขบัตรประชาชน 13 หลัก",
+                            "กรุณากรอกหมายเลขบัตรประชาชน 13 หลัก ",
                             Toast.LENGTH_LONG);
                     t.show();
                 }
